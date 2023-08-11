@@ -7,6 +7,7 @@ const HomePage = () => {
       <Image width={1440} src={banner}></Image>
       <h2>HomePage</h2>
       <p>Hospital management</p>
+      <p>aboy us</p>
     </main>
   );
 };
