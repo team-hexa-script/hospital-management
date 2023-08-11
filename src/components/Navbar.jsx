@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+import logo from "@/assets/logo2.png";
 
 const navLinks = [
   {
@@ -42,21 +44,30 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
   return (
-    <div className=" bg-white shadow-md ">
+    <div className=" bg-white shadow-md fixed w-full top-0 z-50">
       <nav className="flex items-center justify-between container mx-auto py-2">
-        <h1 className="text-3xl font-semibold">hospital</h1>
+        <div className="md:flex items-center">
+          <Image className="w-20 ml-5" src={logo} alt=""></Image>
+          <h1 className="text-sky-600 text-sm md:text-2xl font-bold">
+            HexaCentral{" "}
+            <span className="text-red-600 text-sm md:text-2xl font-bold">
+              Clinic
+            </span>
+          </h1>
+        </div>
 
         {/* Dekstop Menu */}
         <ul
           className={`md:flex ${
             menuOpen ? "block" : "hidden"
-          } md:items-center md:py-8 md:font-semibold md:justify-center`}
+          } md:items-center md:py-4 md:font-semibold md:justify-center`}
         >
           {navLinks.map(({ path, title }) => (
             <li className="mx-2" key={path}>
               <NavLink
                 exact={path === "/"}
-                activeClassName="text-blue-800"
+                activeClassName="text-sky-600"
+                className="transition-all hover:text-red-600"
                 href={path}
               >
                 {title}
@@ -64,9 +75,17 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* Search Icon */}
-          <FontAwesomeIcon icon={faSearch} />
+          <li className="mx-2">
+            <FontAwesomeIcon icon={faSearch} />
+          </li>
+
+          <li className="mr-10">
+            <button class="bg-transparent hover:bg-blue-600 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+              login
+            </button>
+          </li>
         </ul>
+        {/* Add Login Button */}
 
         {/* Mobile Menu Button */}
         <div className="flex md:hidden">
