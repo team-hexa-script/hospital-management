@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -12,18 +13,18 @@ const Footer = () => {
           <p>Your Address Line 2</p>
         </div>
         <div className="flex mt-4 md:mt-0">
-          <a href="/" className="mx-2 hover:underline">
+          <Link href="/" className="mx-2 hover:underline">
             Home
-          </a>
-          <a href="/about" className="mx-2 hover:underline">
+          </Link>
+          <Link href="/about" className="mx-2 hover:underline">
             About
-          </a>
-          <a href="/services" className="mx-2 hover:underline">
+          </Link>
+          <Link href="/services" className="mx-2 hover:underline">
             Services
-          </a>
-          <a href="/contact" className="mx-2 hover:underline">
+          </Link>
+          <Link href="/contact" className="mx-2 hover:underline">
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
