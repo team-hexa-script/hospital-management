@@ -22,7 +22,7 @@ const Footer = () => {
             href="/about"
             className="mx-2 hover:underline"
           >
-            About Us
+            About 
           </a>
           <a
             href="/services"
