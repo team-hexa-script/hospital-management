@@ -19,7 +19,10 @@ const navLinks = [
     path: "/pharmacy",
     title: "Pharmacy",
   },
-
+  // {
+  //   path: "/laboratory",
+  //   title: "Laboratory",
+  // },
   {
     path: "/departments",
     title: "Departments",
