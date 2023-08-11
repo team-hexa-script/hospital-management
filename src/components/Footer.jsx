@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
@@ -12,28 +12,16 @@ const Footer = () => {
           <p>Your Address Line 2</p>
         </div>
         <div className="flex mt-4 md:mt-0">
-          <a
-            href="/"
-            className="mx-2 hover:underline"
-          >
+          <a href="/" className="mx-2 hover:underline">
             Home
           </a>
-          <a
-            href="/about"
-            className="mx-2 hover:underline"
-          >
-            About 
+          <a href="/about" className="mx-2 hover:underline">
+            About
           </a>
-          <a
-            href="/services"
-            className="mx-2 hover:underline"
-          >
+          <a href="/services" className="mx-2 hover:underline">
             Services
           </a>
-          <a
-            href="/contact"
-            className="mx-2 hover:underline"
-          >
+          <a href="/contact" className="mx-2 hover:underline">
             Contact Us
           </a>
         </div>
