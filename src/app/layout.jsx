@@ -5,6 +5,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Providers from "@/providers";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ const RootLayout = ({ children }) => {
           "container mx-auto px-2 font-roboto"
         )}
       >
+        <Providers>
         <div className="flex min-h-screen flex-col justify-between">
           <div>
             <Navbar></Navbar>
@@ -34,6 +36,7 @@ const RootLayout = ({ children }) => {
           </div>
           <Footer></Footer>
         </div>
+        </Providers>
       </body>
     </html>
   );

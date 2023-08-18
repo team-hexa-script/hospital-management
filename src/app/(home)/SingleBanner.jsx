@@ -4,12 +4,13 @@ import React from "react";
 const SingleBanner = ({ slider = {} }) => {
   const { bg, title } = slider;
   return (
-    <div className="relative">
+    <div className="relative w-full h-screen">
       <Image
         src={bg}
         alt={title}
-        width={1920}
-        height={1080}
+        // width={1920}
+        // height={1080}
+        fill
         objectFit="cover"
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-yellow-300 text-center">
