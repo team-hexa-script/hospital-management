@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -19,10 +20,10 @@ const navLinks = [
     path: "/pharmacy",
     title: "Pharmacy",
   },
-  // {
-  //   path: "/laboratory",
-  //   title: "Laboratory",
-  // },
+  {
+    path: "/laboratory",
+    title: "Laboratory",
+  },
   {
     path: "/departments",
     title: "Departments",
@@ -31,23 +32,24 @@ const navLinks = [
     path: "/blogs",
     title: "Blogs",
   },
-  {
-    path: "/dashboard",
-    title: "Dashboard",
-  },
 ];
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const navLinksToShow = user
+    ? [...navLinks, { path: "/dashboard", title: "Dashboard" }]
+    : navLinks;
+
   return (
-    <div className=" bg-white shadow-md fixed w-full top-0 z-50">
-      <nav className="flex items-center justify-between container mx-auto py-2">
+    <div className="fixed w-full top-0 bg-white bg-opacity-40 shadow-md z-10">
+      <nav className="flex items-center justify-between container mx-auto my-2">
         <div className="md:flex items-center">
-          <Image className="w-20 ml-5" src={logo} alt=""></Image>
+          <Image className="w-20" src={logo} alt=""></Image>
           <h1 className="text-sky-600 text-sm md:text-2xl font-bold">
             HexaCentral{" "}
             <span className="text-red-600 text-sm md:text-2xl font-bold">
@@ -62,7 +64,7 @@ const Navbar = () => {
             menuOpen ? "block" : "hidden"
           } md:items-center md:py-4 md:font-semibold md:justify-center`}
         >
-          {navLinks.map(({ path, title }) => (
+          {navLinksToShow.map(({ path, title }) => (
             <li className="mx-2" key={path}>
               <NavLink
                 exact={path === "/"}
@@ -79,12 +81,26 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </li>
 
-          <li className="mr-10">
-            <button class="bg-transparent hover:bg-blue-600 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-              login
-            </button>
-          </li>
-          <h2>hello</h2>
+          {user ? (
+            // User is logged in, show dashboard link
+            <li className="mx-2">
+              <NavLink
+                exact={false}
+                activeClassName="text-sky-600"
+                className="transition-all hover:text-red-600"
+                href="/dashboard"
+              >
+                Dashboard
+              </NavLink>
+            </li>
+          ) : (
+            // User is not logged in, show login button
+            <li className="mr-10">
+              <button className="bg-transparent hover:bg-blue-600 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                Login
+              </button>
+            </li>
+          )}
         </ul>
         {/* Add Login Button */}
 

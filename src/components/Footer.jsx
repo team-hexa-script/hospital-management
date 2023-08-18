@@ -4,26 +4,45 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white">
-      <div className="container mx-auto py-8 flex flex-col md:flex-row justify-between items-center">
-        <div className="text-center md:text-left mb-4 md:mb-0">
-          <h2 className="text-2xl font-semibold">Hospital Management System</h2>
-          <p className="mt-2">Your Address Line 1</p>
-          <p>Your Address Line 2</p>
-        </div>
-        <div className="flex mt-4 md:mt-0">
-          <a href="/" className="mx-2 hover:underline">
-            Home
-          </a>
-          <a href="/about" className="mx-2 hover:underline">
-            About
-          </a>
-          <a href="/services" className="mx-2 hover:underline">
-            Services
-          </a>
-          <a href="/contact" className="mx-2 hover:underline">
-            Contact Us
-          </a>
+    <footer className="footer p-10 bg-sky-600 text-white">
+      <div>
+        <span className="text-white">Services</span>
+        <a className="link link-hover">Branding</a>
+        <a className="link link-hover">Design</a>
+        <a className="link link-hover">Marketing</a>
+        <a className="link link-hover">Advertisement</a>
+      </div>
+      <div>
+        <span className="text-white">Company</span>
+        <a className="link link-hover">About us</a>
+        <a className="link link-hover">Contact</a>
+        <a className="link link-hover">Jobs</a>
+        <a className="link link-hover">Press kit</a>
+      </div>
+      <div>
+        <span className=" text-white">Legal</span>
+        <a className="link link-hover">Terms of use</a>
+        <a className="link link-hover">Privacy policy</a>
+        <a className="link link-hover">Cookie policy</a>
+      </div>
+      <div>
+        <span className=" text-white">Newsletter</span>
+        <div className="form-control w-80">
+          <label className="label text-white">
+            <span className="label-text text-white">
+              Enter your email address
+            </span>
+          </label>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              className="input input-bordered w-full pr-16"
+            />
+            <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
     </footer>
