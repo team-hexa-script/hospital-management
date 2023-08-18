@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 
@@ -8,6 +9,8 @@ import Image from "next/image";
 import logo from "@/assets/logo2.png";
 import Link from "next/link";
 import useAuth from "@/hooks/useAuth";
+import { toast } from "react-hot-toast";
+import { usePathname, useRouter } from "next/navigation";
 
 const navLinks = [
   {
@@ -51,8 +54,24 @@ const Navbar = () => {
     ? [...navLinks, { path: "/dashboard", title: "Dashboard" }]
     : navLinks;
 
+    const {replace} = useRouter();
+    const path = usePathname();
+
   const handleLogout = async () => {
-    await logout()
+    try {
+      await logout();
+    const res = await fetch("/api/auth/logout", {
+      method: "POST"
+    });
+    if (path.includes("/dashboard") || path.includes("/profile")) {
+      replace(`/login?redirectUrl=${path}`);
+    }
+    const data = await res.json();
+    toast.success("successfully logout")
+
+    } catch (error) {
+      toast.error("successfully not logout")
+    }
   }
 
   return (
@@ -86,14 +105,30 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li className="mx-2">
+          {/* <li className="mx-2">
             <FontAwesomeIcon icon={faSearch} />
-          </li>
+          </li> */}
 
           {user ? (
             // User is logged in, show dashboard link
             <li className="mx-2">
-              <button onClick={handleLogout}>Log out</button>
+              <div className="dropdown dropdown-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                  <div className="w-10 rounded-full">
+                    <img src={user?.photoURL} />
+                  </div>
+                </label>
+                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                  <li>
+                    <a className="justify-between">
+                      Profile
+                      <span className="badge">New</span>
+                    </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><button onClick={handleLogout}>Logout</button></li>
+                </ul>
+              </div>
             </li>
           ) : (
             // User is not logged in, show login button
