@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import logo from "@/assets/logo2.png";
+import Link from "next/link";
+import useAuth from "@/hooks/useAuth";
 
 const navLinks = [
   {
@@ -12,7 +15,7 @@ const navLinks = [
     title: "Home",
   },
   {
-    path: "/patient",
+    path: "/patientManagement",
     title: "Patient Management",
   },
   {
@@ -31,23 +34,32 @@ const navLinks = [
     path: "/blogs",
     title: "Blogs",
   },
-  {
-    path: "/dashboard",
-    title: "Dashboard",
-  },
 ];
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
+
+  // const { uid, displayName, photoURL } = user || {};
+  // const user = true;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const navLinksToShow = user
+    ? [...navLinks, { path: "/dashboard", title: "Dashboard" }]
+    : navLinks;
+
+  const handleLogout = async () => {
+    await logout()
+  }
+
   return (
-    <div className=" bg-white shadow-md fixed w-full top-0 z-50">
-      <nav className="flex items-center justify-between container mx-auto py-2">
+    <div className="sticky w-full top-0 bg-white  shadow-md z-10">
+      <nav className="flex items-center justify-between container mx-auto my-2">
         <div className="md:flex items-center">
-          <Image className="w-20 ml-5" src={logo} alt=""></Image>
+          <Image className="w-20" src={logo} alt=""></Image>
           <h1 className="text-sky-600 text-sm md:text-2xl font-bold">
             HexaCentral{" "}
             <span className="text-red-600 text-sm md:text-2xl font-bold">
@@ -58,11 +70,10 @@ const Navbar = () => {
 
         {/* Dekstop Menu */}
         <ul
-          className={`md:flex ${
-            menuOpen ? "block" : "hidden"
-          } md:items-center md:py-4 md:font-semibold md:justify-center`}
+          className={`md:flex ${menuOpen ? "block" : "hidden"
+            } md:items-center md:py-4 md:font-semibold md:justify-center`}
         >
-          {navLinks.map(({ path, title }) => (
+          {navLinksToShow.map(({ path, title }) => (
             <li className="mx-2" key={path}>
               <NavLink
                 exact={path === "/"}
@@ -79,11 +90,19 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </li>
 
-          <li className="mr-10">
-            <button class="bg-transparent hover:bg-blue-600 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-              login
-            </button>
-          </li>
+          {user ? (
+            // User is logged in, show dashboard link
+            <li className="mx-2">
+              <button onClick={handleLogout}>Log out</button>
+            </li>
+          ) : (
+            // User is not logged in, show login button
+            <li className="mr-10">
+              <button className="bg-transparent hover:bg-blue-600 text-sky-600 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                <Link href={"/login"}>Login</Link>
+              </button>
+            </li>
+          )}
         </ul>
         {/* Add Login Button */}
 

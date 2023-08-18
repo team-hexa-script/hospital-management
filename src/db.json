@@ -1,0 +1,410 @@
+{ 
+  "categories": [
+    {
+      "id": 1,
+      "name": "Emergency Department",
+      "description": "Handles medical emergencies and urgent cases",
+      "doctors": ["Dr. Smith", "Dr. Johnson"],
+      "nurses": ["Nurse Anderson", "Nurse Lee"]
+    },
+    {
+      "id": 2,
+      "name": "Cardiology Department",
+      "description": "Specializes in heart-related medical care",
+      "doctors": ["Dr. Brown", "Dr. Martinez"],
+      "nurses": ["Nurse Clark", "Nurse White"]
+    },
+    {
+      "id": 3,
+      "name": "Orthopedics Department",
+      "description": "Focuses on musculoskeletal injuries and disorders",
+      "doctors": ["Dr. Wilson", "Dr. Garcia"],
+      "nurses": ["Nurse Baker", "Nurse Harris"]
+    },
+    {
+      "id": 4,
+      "name": "Pediatrics Department",
+      "description": "Cares for children's medical needs",
+      "doctors": ["Dr. Adams", "Dr. Taylor"],
+      "nurses": ["Nurse Walker", "Nurse Turner"]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Emergency Department",
+      "nurses": [
+        {"name": "Nurse Anderson"},
+        {"name": "Nurse Lee"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cardiology Department",
+      "nurses": [
+        {"name": "Nurse Clark"},
+        {"name": "Nurse White"}
+      ]
+    }
+   
+  ],
+  "hospitalLaboratories": [
+    {
+      "id": 1,
+      "image": "https://www.linkpicture.com/q/1lab.jpg",
+      "name": "Clinical Chemistry Laboratory",
+      "purpose": "Tests blood and bodily fluids for chemical composition analysis.",
+      "equipment": [
+        "Automated analyzers",
+        "Spectrophotometers",
+        "Centrifuges",
+        "Pipettes"
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://www.linkpicture.com/q/2lab.jpg",
+      "name": "Microbiology Laboratory",
+      "purpose": "Identifies microorganisms to diagnose infections.",
+      "equipment": [
+        "Incubators",
+        "Microscopes",
+        "Culture media",
+        "Bacterial identification systems"
+      ]
+    },
+    {
+      "id": 3,
+      "image": "https://www.linkpicture.com/q/The-haematology-laboratory.png",
+      "name": "Hematology Laboratory",
+      "purpose": "Analyzes blood samples for blood cell counts and disorders.",
+      "equipment": ["Hematology analyzers", "Centrifuges", "Coagulation analyzers"]
+    },
+    {
+      "id": 4,
+      "image": "https://www.linkpicture.com/q/immutology.jpg",
+      "name": "Immunology Laboratory",
+      "purpose":
+        "Tests the immune system's response for diagnosing autoimmune diseases and allergies.",
+      "equipment": [
+        "ELISA machines",
+        "Fluorescence-activated cell sorters (FACS)",
+        "Immunoassay analyzers"
+      ]
+    },
+    {
+      "id": 5,
+      "image": "https://www.linkpicture.com/q/molecular.jpg",
+      "name": "Molecular Biology Laboratory",
+      "purpose":
+        "Analyzes DNA, RNA, and proteins for genetic testing and research.",
+      "equipment": [
+        "PCR machines",
+        "DNA sequencers",
+        "Gel electrophoresis systems"
+      ]
+    },
+    {
+      "id": 6,
+      "image": "https://www.linkpicture.com/q/pathology.jpg",
+      "name": "Pathology Laboratory",
+      "purpose": "Examines tissue samples and cells to diagnose diseases.",
+      "equipment": ["Microtomes", "Histology processors", "Slide scanners"]
+    },
+    {
+      "id": 7,
+      "image": "https://www.linkpicture.com/q/radiology.png",
+      "name": "Radiology Laboratory",
+      "purpose":
+        "Conducts various imaging tests for diagnosing internal conditions.",
+      "equipment": [
+        "X-ray machines",
+        "CT scanners",
+        "MRI machines",
+        "Ultrasound", "equipment"
+      ]
+    },
+    {
+      "id": 8,
+      "image": "https://www.linkpicture.com/q/blood.jpg",
+      "name": "Blood Bank Laboratory",
+      "purpose": "Collects, processes, and stores blood and blood products.",
+      "equipment": [
+        "Blood collection equipment",
+        "Refrigerators",
+        "Freezers",
+        "Blood typing kits"
+      ]
+    },
+    {
+      "id": 9,
+      "image": "https://www.linkpicture.com/q/idea_sized-gettyimages-587968712.jpg",
+      "name": "Clinical Genetics Laboratory",
+      "purpose": "Analyzes genetic material to diagnose genetic disorders.",
+      "equipment": [
+        "Genetic analyzers",
+        "Karyotyping equipment",
+        "Microarray systems"
+      ]
+    },
+    {
+      "id": 10,
+      "image": "https://www.linkpicture.com/q/nuclear.jpg",
+      "name": "Nuclear Medicine Laboratory",
+      "purpose":
+        "Uses radioactive substances for imaging and therapeutic procedures.",
+      "equipment": ["Gamma cameras", "PET scanners", "Radiopharmaceuticals"]
+    },
+    {
+      "id": 11,
+      "image": "https://www.linkpicture.com/q/cytology-770x400.jpg",
+      "name": "Cytology Laboratory",
+      "purpose":
+        "Examines cells collected from various body sites to detect cancer and abnormalities.",
+      "equipment": [
+        "Microscopes",
+        "Cytology staining equipment",
+        "Cell block preparation tools"
+      ]
+    },
+    {
+      "id": 12,
+      "image": "https://www.linkpicture.com/q/download-2_41.jpg",
+      "name": "Clinical Research Laboratory",
+      "purpose":
+        "Conducts clinical trials and research studies to evaluate new treatments.",
+      "equipment": [
+        "Data management software",
+        "Electronic health record systems",
+        "Clinical trial supplies"
+      ]
+    }
+  ],
+  "pharmacyProducts": [
+    {
+      "id": 1,
+      "name": "Analgesics",
+      "image": "https://www.linkpicture.com/q/analgesic.jpg",
+      "purpose": "Relieves pain and discomfort.",
+      "price": 9.99
+    },
+    {
+      "id": 2,
+      "name": "Antibiotics",
+      "image":
+        "https://www.linkpicture.com/q/m78t8y-c-fahroni_alamy-stock-photo.jpg",
+      "purpose": "Treats bacterial infections.",
+      "price": 12.49
+    },
+    {
+      "id": 3,
+      "name": "Antidepressants",
+      "image": "https://www.linkpicture.com/q/ph.jpg",
+      "purpose": "Manages symptoms of depression and mood disorders.",
+      "price": 14.95
+    },
+    {
+      "id": 4,
+      "name": "Antihistamines",
+      "image": "https://www.linkpicture.com/q/istockphoto-1172461597-612x612.jpg",
+      "purpose": "Relieves allergy symptoms by blocking histamine receptors.",
+      "price": 6.79
+    },
+    {
+      "id": 5,
+      "name": "Antipyretics",
+      "image": "https://www.linkpicture.com/q/istockphoto-673531980-612x612.jpg",
+      "purpose": "Reduces fever and body temperature.",
+      "price": 7.99
+    },
+    {
+      "id": 6,
+      "name": "Antivirals",
+      "image": "https://www.linkpicture.com/q/images_150.jpg",
+      "purpose": "Targets and treats viral infections.",
+      "price": 18.29
+    },
+    {
+      "id": 7,
+      "name": "Cardiovascular Medications",
+      "image": "https://www.linkpicture.com/q/images_344.jpg",
+      "purpose": "Treats heart and blood vessel conditions.",
+      "price": 23.95
+    },
+    {
+      "id": 8,
+      "name": "Respiratory Medications",
+      "image": "https://www.linkpicture.com/q/images-1_28.jpg",
+      "purpose": "Manages respiratory conditions like asthma and COPD.",
+      "price": 10.49
+    },
+    {
+      "id": 9,
+      "name": "Gastrointestinal Medications",
+      "image": "https://www.linkpicture.com/q/Gastrointestinal-Drugs.jpg",
+      "purpose": "Treats digestive system issues like reflux and ulcers.",
+      "price": 8.99
+    },
+    {
+      "id": 10,
+      "name": "Vitamins and Minerals",
+      "image": "https://www.linkpicture.com/q/images-2_50.jpg",
+      "purpose": "Provides essential nutrients for health.",
+      "price": 14.95
+    },
+    {
+      "id": 11,
+      "name": "Immunosuppressants",
+      "image": "https://www.linkpicture.com/q/images-3_39.jpg",
+      "purpose": "Suppresses immune responses, often used in transplant patients.",
+      "price": 30.79
+    },
+    {
+      "id": 12,
+      "name": "Muscle Relaxants",
+      "image": "https://www.linkpicture.com/q/images-4_37.jpg",
+      "purpose": "Eases muscle tension and spasms.",
+      "price": 11.49
+    },
+    {
+      "id": 13,
+      "name": "Diuretics",
+      "image": "https://www.linkpicture.com/q/download_157.jpg",
+      "purpose": "Promotes urine production and fluid elimination.",
+      "price": 7.95
+    },
+    {
+      "id": 14,
+      "name": "Dermatological Medications",
+      "image": "https://www.linkpicture.com/q/81kElGrEIZL._AC_UL600_SR600-600.jpg",
+      "purpose": "Treats skin conditions and disorders.",
+      "price": 13.99
+    },
+    {
+      "id": 15,
+      "name": "Hormone Replacement Therapy",
+      "image": "https://www.linkpicture.com/q/download-1_79.jpg",
+      "purpose": "Replaces or supplements hormones.",
+      "price": 22.95
+    },
+    {
+      "id": 16,
+      "name": "Anticoagulants",
+      "image": "https://www.linkpicture.com/q/a-packet-of-clopidogrel-anticoagulant-drugs-showing-tablet-also-known-CR1EJ8.jpg",
+      "purpose": "Prevents blood clot formation.",
+      "price": 17.79
+    },
+    {
+      "id": 17,
+      "name": "Opioid Analgesics",
+      "image": "https://www.linkpicture.com/q/images_345.jpg",
+      "purpose": "Powerful pain relievers derived from opium.",
+      "price": 25.99
+    },
+    {
+      "id": 18,
+      "name": "Glycemic Control Medications",
+      "image": "https://www.linkpicture.com/q/download_171.jpg",
+      "purpose": "Manages blood sugar levels in diabetes patients.",
+      "price": 14.49
+    },
+    {
+      "id": 19,
+      "name": "Ophthalmic Medications",
+      "image": "https://www.linkpicture.com/q/download-1_80.jpg",
+      "purpose": "Treats eye conditions and diseases.",
+      "price": 9.99
+    },
+    {
+      "id": 20,
+      "name": "Otic Medications",
+      "image": "https://www.linkpicture.com/q/download-2_73.jpg",
+      "purpose": "Treats ear infections and issues.",
+      "price": 6.95
+    },
+    {
+      "id": 21,
+      "name": "Cough Syrup",
+      "image": "https://www.linkpicture.com/q/download-3_60.jpg",
+      "purpose": "Relieves cough and soothes throat irritation.",
+      "price": 7.99
+    },
+    {
+      "id": 22,
+      "name": "Antacid Chewable Tablets",
+      "image": "https://www.linkpicture.com/q/antacid-tablet-chewable.jpg",
+      "purpose": "Relieves heartburn and indigestion symptoms.",
+      "price": 5.49
+    },
+    {
+      "id": 23,
+      "name": "Multivitamin Supplements",
+      "image": "https://www.linkpicture.com/q/images-1_51.jpg",
+      "purpose": "Provides essential vitamins and minerals for overall health.",
+      "price": 12.95
+    },
+    {
+      "id": 24,
+      "name": "Nasal Decongestant Spray",
+      "image": "https://www.linkpicture.com/q/download-4_62.jpg",
+      "purpose": "Clears nasal congestion and improves breathing.",
+      "price": 8.79
+    },
+    {
+      "id": 25,
+      "name": "Antibacterial Hand Sanitizer",
+      "image": "https://www.linkpicture.com/q/1654707538-516ldzLw1iL._SL500.jpg",
+      "purpose": "Kills germs and bacteria to maintain hand hygiene.",
+      "price": 3.49
+    },
+    {
+      "id": 26,
+      "name": "First Aid Kit",
+      "image": "https://www.linkpicture.com/q/download-5_7.jpg",
+      "purpose": "Contains essential items for basic medical emergencies.",
+      "price": 19.95
+    },
+    {
+      "id": 27,
+      "name": "Eye Drops",
+      "image": "https://www.linkpicture.com/q/download-6_46.jpg",
+      "purpose": "Relieves dry and irritated eyes.",
+      "price": 6.29
+    },
+    {
+      "id": 28,
+      "name": "Digestive Enzyme Supplements",
+      "image": "https://www.linkpicture.com/q/Now-Foods-Super-Enzymes-180-Capsules-price-in-bangladesh.jpg",
+      "purpose": "Aids in digestion and nutrient absorption.",
+      "price": 11.99
+    },
+    {
+      "id": 29,
+      "name": "Allergy Relief Tablets",
+      "image": "https://www.linkpicture.com/q/download-7_43.jpg",
+      "purpose": "Provides relief from allergy symptoms.",
+      "price": 9.49
+    },
+    {
+      "id": 30,
+      "name": "Sleep Aid Tablets",
+      "image": "path/to/sleep_aid.jpg",
+      "purpose": "Promotes better sleep and relaxation.",
+      "price": 7.99
+    },
+    {
+      "id": 31,
+      "name": "Sunscreen Lotion",
+      "image": "path/to/sunscreen.jpg",
+      "purpose": "Protects skin from harmful UV rays and sunburn.",
+      "price": 13.95
+    },
+    {
+      "id": 32,
+      "name": "Antifungal Cream",
+      "image": "path/to/antifungal.jpg",
+      "purpose": "Treats fungal infections like athlete's foot.",
+      "price": 6.79
+    }
+  ]
+}

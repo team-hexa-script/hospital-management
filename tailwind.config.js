@@ -10,5 +10,5 @@ module.exports = {
       roboto: "var(--font-roboto)",
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
